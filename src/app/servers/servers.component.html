@@ -17,9 +17,21 @@ class="form-control"
 
 </button>
 
-<p>
+<!-- <p>
     {{ServerCreationStatus}}
-</p>
+</p> -->
 <!-- <p [innerText] = "Allowbutton"> </p>-->
+
+<p *ngIf="ServerCondition ; else noServer">
+    Server is created , Server name is {{ServerName}}
+</p>
+
+<ng-template #noServer>
+
+    <p>
+        No Server was created
+    </p>
+</ng-template>
+
 <app-server></app-server>
 <app-server></app-server>
