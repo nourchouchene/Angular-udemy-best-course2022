@@ -1,8 +1,16 @@
 import { Component } from "@angular/core";
+import { withLatestFrom } from "rxjs";
 
 @Component ({
 selector : ' app-server',
-templateUrl : 'server.component.html'
+templateUrl : 'server.component.html' ,
+styles: [
+    `
+.online {
+    color : white ;
+}
+    `
+]
 
 })
 
@@ -27,10 +35,10 @@ export class ServerComponent {
         if    (this.serverStatus === 'online' ) 
         {
 
-            return 'red' ;
+            return 'green' ;
         }
         else
-        return 'green';
+        return 'red';
 
     }
 }
